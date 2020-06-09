@@ -49,7 +49,7 @@ training_set = train_datagen.flow_from_directory('C:\\Users\\Manas\\OneDrive\\Pi
                                                  batch_size = 16,
                                                  class_mode = 'categorical')
 
-test_set = test_datagen.flow_from_directory('C:\\Users\\Manas\\OneDrive\\Pictures\\Bird Photo\\Train',
+test_set = test_datagen.flow_from_directory('C:\\Users\\Manas\\OneDrive\\Pictures\\Bird Photo\\Test',
                                             target_size = (150, 150),
                                             batch_size = 16,
                                             class_mode = 'categorical')
@@ -67,20 +67,3 @@ print(training_set.class_indices)
 # Part 3 - Making new predictions
 
 
-
-'''
-import numpy as np
-from keras.preprocessing import image
-test_image = image.load_img('C:\\Users\\Manas\\OneDrive\\Pictures\\Family Photo\\Mummy\\DSC01196.jpg', target_size = (64, 64))
-test_image = image.img_to_array(test_image)
-test_image = np.expand_dims(test_image, axis = 0)
-result = model.predict(test_image)
-training_set.class_indices
-if result[0][0] == 1:
-    prediction = 'dog'
-    print(prediction)
-else:
-    prediction = 'cat'
-    print(prediction)
-
-'''
